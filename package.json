@@ -1,0 +1,11 @@
+{
+  "name": "Factorio-MEP",
+  "version": "1.0.0",
+  "description": "Parses factorio map exhcnages strings. Outputting them in map.gen.settings.json format.",
+  "main": "index.js",
+  "author": "Tim Stableford (tim.stableford1@gmail.com)",
+  "license": "MIT",
+  "dependencies": {
+    "crc-32": "1.1.1"
+  }
+}
