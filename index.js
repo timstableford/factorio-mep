@@ -72,15 +72,20 @@ if (!mes) {
 } else if (mes.includes('help')) {
   usage();
 } else {
-  const parsed = JSON.stringify(parse(mes), null, 2)
-  if (file) {
-    console.log("Saving output to file: " + file);
-    fs.writeFile(file, parsed, function(err) {
-    if(err) {
-        return console.log(err);
+  const parsed = parse(mes);
+  const parsedStr = JSON.stringify(parsed, null, 2)
+  if (parsed) {
+    if (file) {
+      console.log("Saving output to file: " + file);
+      fs.writeFile(file, parsedStr, function(err) {
+        if(err) {
+          return console.log(err);
+        }
+        console.log("File saved!");
+      });
     }
-    console.log("File saved!");
-});
+    console.log(parsedStr);
+  } else {
+    console.log("Failed to parse map exchange string.");
   }
-  console.log(parsed);
 }
